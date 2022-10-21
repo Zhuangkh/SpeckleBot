@@ -1,0 +1,34 @@
+{
+    "appName": "SpeckleBot",
+    "projectId": "926034e9-1875-4761-9502-65377b5b8177",
+    "version": "2.1.0",
+    "isFromSample": false,
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [],
+        "capabilities": [
+            "Bot"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-identity",
+            "fx-resource-bot",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio",
+            "fx-resource-cicd",
+            "fx-resource-api-connector"
+        ]
+    },
+    "programmingLanguage": "csharp",
+    "pluginSettings": {
+        "fx-resource-bot": {
+            "host-type": "app-service",
+            "capabilities": [
+                "notification"
+            ]
+        }
+    },
+    "isFirstTimeOpenProject": false
+}

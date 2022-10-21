@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeckleBot", "SpeckleBot\SpeckleBot.csproj", "{F3E60370-32BC-4CF4-863B-2562B71DBF1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3E60370-32BC-4CF4-863B-2562B71DBF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E60370-32BC-4CF4-863B-2562B71DBF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E60370-32BC-4CF4-863B-2562B71DBF1C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3E60370-32BC-4CF4-863B-2562B71DBF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E60370-32BC-4CF4-863B-2562B71DBF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E60370-32BC-4CF4-863B-2562B71DBF1C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {256F1D60-F459-4B63-8EB3-EC5EE1CECFC6}
+	EndGlobalSection
+EndGlobal
