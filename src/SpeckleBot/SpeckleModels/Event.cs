@@ -5,7 +5,7 @@ namespace SpeckleBot.SpeckleModels
     public class Event
     {
         [JsonPropertyName("event_name")]
-        public string Name { get; set; }
+        public EventType Name { get; set; }
 
         [JsonPropertyName("data")]
         public Data Data { get; set; }
