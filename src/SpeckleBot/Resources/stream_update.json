@@ -1,0 +1,126 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.4",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${Title}",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "${AvatarUrl}",
+                  "altText": "${UserName}",
+                  "size": "Small",
+                  "style": "Person"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${UserName}",
+                  "weight": "Bolder",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "None",
+                  "text": "${Description}",
+                  "isSubtle": true,
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Old",
+                  "horizontalAlignment": "Center",
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "FactSet",
+                  "facts": [
+                    {
+                      "$data": "${Old}",
+                      "title": "${key}",
+                      "value": "${value}"
+                    }
+                  ],
+                  "separator": true,
+                  "spacing": "Small"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "New",
+                  "horizontalAlignment": "Center",
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "FactSet",
+                  "facts": [
+                    {
+                      "$data": "${New}",
+                      "title": "${Key}",
+                      "value": "${Value}"
+                    }
+                  ],
+                  "separator": true,
+                  "spacing": "Small"
+                }
+              ]
+            }
+          ],
+          "separator": true
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "View Details",
+      "url": "${DetailsUrl}"
+    }
+  ]
+}

@@ -59,11 +59,11 @@
           "facts": [
             {
               "title": "Stream:",
-              "value": "Einsam"
+              "value": "${StreamName}"
             },
             {
               "title": "Server:",
-              "value": "Speckle XYZ"
+              "value": "${ServerName}"
             }
           ]
         }

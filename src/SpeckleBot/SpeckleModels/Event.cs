@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Dynamic;
+using System.Text.Json.Serialization;
 
 namespace SpeckleBot.SpeckleModels
 {
@@ -8,6 +9,6 @@ namespace SpeckleBot.SpeckleModels
         public EventType Name { get; set; }
 
         [JsonPropertyName("data")]
-        public Data Data { get; set; }
+        public ExpandoObject Data { get; set; }
     }
 }
