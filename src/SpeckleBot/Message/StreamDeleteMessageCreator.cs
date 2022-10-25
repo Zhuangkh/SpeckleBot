@@ -6,15 +6,14 @@ using SpeckleBot.SpeckleModels;
 
 namespace SpeckleBot.Message
 {
-    public class StreamPermissionsMessageCreator : IMessageCreator
+    public class StreamDeleteMessageCreator : IMessageCreator
     {
-        private readonly string _adaptiveCardFilePath = Path.Combine(".", "Resources", "stream_permissions.json");
+        private readonly string _adaptiveCardFilePath = Path.Combine(".", "Resources", "stream_delete.json");
         public async Task<object> CreateAdaptiveCard(Payload payload)
         {
             var cardTemplate = await System.IO.File.ReadAllTextAsync(_adaptiveCardFilePath);
             var title = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(payload.Data.Event.Name.GetEnumMemberValue().Replace("_", " "));
             var eventData = payload.Data.Event.Data.ToDictionary(x => x.Key, x => ((System.Text.Json.JsonElement)x.Value).EnumerateObject().ToDictionary(d => d.Name, d => d.Value.ToString()));
-            var detailsUrl = $"{payload.Data.Server.CanonicalUrl}/streams/{payload.Data.StreamId}/collaborators";
             var cardContent = new AdaptiveCardTemplate(cardTemplate).Expand
                 (
                     new DefaultModel
@@ -25,7 +24,6 @@ namespace SpeckleBot.Message
                         Description = payload.Data.ActivityMessage,
                         StreamName = payload.Data.Stream.Name,
                         ServerName = payload.Data.Server.Name,
-                        DetailsUrl = detailsUrl,
                     }
                 );
             return JsonConvert.DeserializeObject(cardContent);

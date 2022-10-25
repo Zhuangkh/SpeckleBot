@@ -17,7 +17,7 @@ namespace SpeckleBot.Message
             var detailsUrl = $"{payload.Data.Server.CanonicalUrl}/streams/{payload.Data.StreamId}/branches/{eventData["branch"]["name"]}";
             var cardContent = new AdaptiveCardTemplate(cardTemplate).Expand
                 (
-                    new NotificationModel
+                    new DefaultModel
                     {
                         Title = title,
                         AvatarUrl = payload.Data.User.Avatar,

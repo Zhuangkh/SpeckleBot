@@ -1,6 +1,6 @@
 namespace SpeckleBot.Models
 {
-    public class NotificationModel
+    public class DefaultModel
     {
         public string Title { get; set; }
         public string Description { get; set; }
