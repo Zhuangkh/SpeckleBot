@@ -11,6 +11,8 @@ namespace SpeckleBot.Message
                 case EventType.StreamUpdate:
                 case EventType.BranchUpdate:
                     return new UpdateMessageCreator().CreateAdaptiveCard(payload);
+                case EventType.StreamDelete:
+                    return new StreamDeleteMessageCreator().CreateAdaptiveCard(payload);
                 case EventType.BranchCreate:
                 case EventType.BranchDelete:
                     return new BranchMessageCreator().CreateAdaptiveCard(payload);

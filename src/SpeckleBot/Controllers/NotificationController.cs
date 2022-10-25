@@ -21,10 +21,10 @@ namespace SpeckleBot.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostAsync([FromBody]Payload payload)
+        public async Task<ActionResult> PostAsync([FromBody] Payload payload)
         {
             var installations = await this._conversation.Notification.GetInstallationsAsync();
-            var card =await MessageFactory.CreateAdaptiveCard(payload);
+            var card = await MessageFactory.CreateAdaptiveCard(payload);
 
             foreach (var installation in installations)
             {
