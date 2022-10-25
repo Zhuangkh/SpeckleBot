@@ -13,7 +13,8 @@ namespace SpeckleBot.Message
         {
             var cardTemplate = await System.IO.File.ReadAllTextAsync(_adaptiveCardFilePath);
             var title = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(payload.Data.Event.Name.GetEnumMemberValue().Replace("_", " "));
-            var detailsUrl = $"{payload.Data.Server.CanonicalUrl}/streams/{payload.Data.StreamId}";
+            var eventData = payload.Data.Event.Data.ToDictionary(x => x.Key, x => ((System.Text.Json.JsonElement)x.Value).EnumerateObject().ToDictionary(d => d.Name, d => d.Value.ToString()));
+            var detailsUrl = $"{payload.Data.Server.CanonicalUrl}/streams/{payload.Data.StreamId}/branches/{eventData["branch"]["name"]}";
             var cardContent = new AdaptiveCardTemplate(cardTemplate).Expand
                 (
                     new NotificationModel
@@ -31,3 +32,4 @@ namespace SpeckleBot.Message
         }
     }
 }
+ 

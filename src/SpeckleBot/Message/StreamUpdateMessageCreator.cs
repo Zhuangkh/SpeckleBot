@@ -6,9 +6,9 @@ using SpeckleBot.SpeckleModels;
 
 namespace SpeckleBot.Message
 {
-    public class StreamUpdateMessageCreator : IMessageCreator
+    public class UpdateMessageCreator : IMessageCreator
     {
-        private readonly string _adaptiveCardFilePath = Path.Combine(".", "Resources", "stream_update.json");
+        private readonly string _adaptiveCardFilePath = Path.Combine(".", "Resources", "update.json");
         public async Task<object> CreateAdaptiveCard(Payload payload)
         {
             var cardTemplate = await System.IO.File.ReadAllTextAsync(_adaptiveCardFilePath); 
@@ -17,7 +17,7 @@ namespace SpeckleBot.Message
             var eventData = payload.Data.Event.Data.ToDictionary(x => x.Key, x => ((System.Text.Json.JsonElement)x.Value).EnumerateObject().ToDictionary(d => d.Name, d => d.Value.ToString()));
             var cardContent = new AdaptiveCardTemplate(cardTemplate).Expand
                 (
-                    new StreamUpdateModel
+                    new UpdateModel
                     {
                         Title = title,
                         AvatarUrl = payload.Data.User.Avatar,

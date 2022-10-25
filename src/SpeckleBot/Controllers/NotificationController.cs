@@ -21,14 +21,14 @@ namespace SpeckleBot.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostAsync([FromBody]Payload payload, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> PostAsync([FromBody]Payload payload)
         {
-            var installations = await this._conversation.Notification.GetInstallationsAsync(cancellationToken);
+            var installations = await this._conversation.Notification.GetInstallationsAsync();
             var card =await MessageFactory.CreateAdaptiveCard(payload);
 
             foreach (var installation in installations)
             {
-                await installation.SendAdaptiveCard(card, cancellationToken);
+                await installation.SendAdaptiveCard(card);
             }
 
             return Ok();
